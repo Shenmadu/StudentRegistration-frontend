@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class RegisterComponent {
 
   private http;
-   public isSubmitionDisabled = false;
+  public isSubmitionDisabled = false;
 
   constructor(private httpClient: HttpClient) {
     this.http = httpClient;
@@ -19,16 +19,16 @@ export class RegisterComponent {
     lastName: null,
     contactNumber: null
   }
+ 
   public recentSavedStudent:any;
 
-  createStudent() {
-    this.recentSavedStudent=null;
+  createStudent() {        
+    this.recentSavedStudent=null;  
 
     this.isSubmitionDisabled = true;
     this.http.post("http://localhost:8080/student", this.student)
       .subscribe(data => {
-        this.isSubmitionDisabled = false;
-        console.log(data);
+        this.isSubmitionDisabled = false;        
         this.recentSavedStudent=data;
 
         this.student={
@@ -38,6 +38,11 @@ export class RegisterComponent {
         }
 
       });
+  }
+  logChange(data:any){
+    console.log(data);
+    
+
   }
 
 }

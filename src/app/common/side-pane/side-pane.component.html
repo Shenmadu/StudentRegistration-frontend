@@ -1,38 +1,39 @@
-<h1 class="visually-hidden">Sidebars examples</h1>
+<div class="container">
 
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-white" style="width: 80%;">
     
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item" (click)="setSelectedmenu('home')">
-        <a [ngClass]="{'active':selectedMenu =='home'}" routerLink="/" class="nav-link  text-white" aria-current="page">
+        <a [ngClass]="{'active':selectedMenu =='home'}" routerLink="/" class="nav-link  text-black" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Home
         </a>
       </li>
       <li (click)="setSelectedmenu('stdr')">
-        <a  [ngClass]="{'active':selectedMenu =='stdr'}"   routerLink="/register" class="nav-link text-white">
+        <a  [ngClass]="{'active':selectedMenu =='stdr'}"   routerLink="/register" class="nav-link text-black">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
           Student Registration
         </a>
       </li>
       <li (click)="setSelectedmenu('viewStd')">
-        <a  [ngClass]="{'active':selectedMenu =='viewStd'}"  routerLink="/list" class="nav-link text-white">
+        <a  [ngClass]="{'active':selectedMenu =='viewStd'}"  routerLink="/list" class="nav-link text-black">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           View Student
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-black">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           Courses
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="#" class="nav-link text-black">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
           Adminstrattion
         </a>
       </li>
     </ul>
     <hr>
+  </div>

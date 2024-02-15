@@ -22,21 +22,17 @@ export class StudentlistComponent implements OnInit { //use when loard table
     this.http.get("http://localhost:8080/student")
       .subscribe((data) => {
         console.log(data);
-
         this.studentList = data;
 
       })
   }
-  public removeStudent() {
-    
-
+  public removeStudent() {  
     let apiUrl= "http://localhost:8080/student/"+ this.selectedStudent.id;
-
     this.http.delete(apiUrl)
       .subscribe(data => {
         console.log(data);
-         this.loardStudent();
-         this.selectedStudent=null;
+         this.loardStudent();          
+          this.selectedStudent="";
 
       })
   }
@@ -47,12 +43,8 @@ setSelectedStudent(student:any){ //use because student object cannot acces in mo
 
 
 createStudent() {
-
-
-  
   this.http.post("http://localhost:8080/student", this.selectedStudent)
     .subscribe(data => {
-      
       console.log(data);
       this.selectedStudent={};
       this.loardStudent();  
