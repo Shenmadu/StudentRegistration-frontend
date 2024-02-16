@@ -19,30 +19,27 @@ export class RegisterComponent {
     lastName: null,
     contactNumber: null
   }
- 
-  public recentSavedStudent:any;
 
-  createStudent() {        
-    this.recentSavedStudent=null;  
+  public recentSavedStudent: any;
 
-    this.isSubmitionDisabled = true;
-    this.http.post("http://localhost:8080/student", this.student)
-      .subscribe(data => {
-        this.isSubmitionDisabled = false;        
-        this.recentSavedStudent=data;
+  createStudent() {  
+      this.recentSavedStudent = null;
 
-        this.student={
-          firstName: null,
-          lastName: null,
-          contactNumber: null
-        }
+      this.isSubmitionDisabled = true;
+      this.http.post("http://localhost:8080/student", this.student)
+        .subscribe(data => {
+          this.isSubmitionDisabled = false;
+          this.recentSavedStudent = data;
+         
 
-      });
-  }
-  logChange(data:any){
-    console.log(data);
+          this.student = {
+            firstName: null,
+            lastName: null,
+            contactNumber: null
+          }
+
+        });
     
-
   }
 
 }

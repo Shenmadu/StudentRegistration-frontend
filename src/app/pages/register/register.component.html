@@ -13,7 +13,7 @@
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Last Name</label>
     <input type="text" class="form-control" [(ngModel)]="student.lastName" #lastName="ngModel" required
-      placeholder="last name" (change)="logChange(firstName)" >
+      placeholder="last name"  >
 
     <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
       Last Name is required
@@ -22,7 +22,7 @@
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Contact</label>
-    <input type="number" class="form-control" [(ngModel)]="student.contactNumber" #contactNumber="ngModel" required
+    <input type="text" class="form-control" [(ngModel)]="student.contactNumber" #contactNumber="ngModel" required
       placeholder="Contact Number" minlength="10">
 
     <div [hidden]="contactNumber.valid || contactNumber.pristine" class="alert alert-danger">
@@ -32,7 +32,7 @@
   </div>
 
   <div class="mb-3">
-    <button (click)="createStudent()" class="btn btn-primary" [disabled]="isSubmitionDisabled" data-bs-toggle="modal"
+    <button (click)="createStudent()" class="btn btn-primary" [disabled]="isSubmitionDisabled || contactNumber.invalid || contactNumber.pristine" data-bs-toggle="modal"
       data-bs-target="#exampleModal">Proceed</button>
   </div>
 
