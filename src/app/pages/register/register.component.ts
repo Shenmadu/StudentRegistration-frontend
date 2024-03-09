@@ -30,6 +30,7 @@ export class RegisterComponent {
         .subscribe(data => {
           this.isSubmitionDisabled = false;
           this.recentSavedStudent = data;
+          
          
 
           this.student = {
